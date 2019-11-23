@@ -1,0 +1,26 @@
+<div class="promotion">
+  <label for="promo-code">Have A Promo Code?</label>
+  <input type="text" #PromoCode [value]="promoValue" [(ngModel)]="code" />
+  <button type="button" (click)="onPromoClickHandler()"></button>
+</div>
+
+<div class="summary">
+  <ul>
+    <li>
+      Subtotal <span>{{ prod.totalMoney | currency }}</span>
+    </li>
+    <li>
+      Tax <span>{{ prod.tax | currency }}</span>
+    </li>
+    <li *ngIf="confirmMess">
+      Promo Money <span>{{ prod.promoMoney | currency }}</span>
+    </li>
+    <li class="total">
+      Total <span>{{ prod.totalPaid | currency }}</span>
+    </li>
+  </ul>
+</div>
+
+<div class="checkout">
+  <button type="button">Check Out</button>
+</div>
